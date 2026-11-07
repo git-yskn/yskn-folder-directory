@@ -193,31 +193,30 @@ dialog[open]{animation:pop .35s var(--ease)}
   <div class="mh"><div class="ico" id="mi"></div><div style="flex:1;min-width:0"><div class="num" id="mn"></div><strong id="mt"></strong></div>
     <button class="btn" id="mx" type="button" aria-label="Tutup"><i data-lucide="x"></i></button></div>
   <div class="mb"><div id="ms"></div>
-    <a class="btn primary" id="ml" href="https://example.com" target="_blank" rel="noopener noreferrer" style="width:100%;margin-top:.75rem"><i data-lucide="external-link"></i>Buka Folder</a></div>
+    <a class="btn primary" id="ml" href="#" target="_blank" rel="noopener noreferrer" style="width:100%;margin-top:.75rem"><i data-lucide="external-link"></i>Buka Folder</a></div>
 </dialog>
 
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 <script>
 (function(){
 "use strict";
-var BASE="https://drive.google.com/drive/folders/1QRGuR6MKzLJNbBN-K4WUzHe3pr5Fqz4j?usp=drive_link"; // Ganti dengan alamat tujuan masing-masing folder
 var F=[
-["Legalitas dan Organisasi","scale","t","legalitas",["Akta dan SK Kemenkumham","NPWP, NIB dan Perizinan","AD/ART dan Peraturan Internal","Struktur Pembina, Pengurus, Pengawas","Notulen Rapat Pembina dan Pengurus","MoU dan Perjanjian Kerja Sama"]],
-["Perencanaan dan Strategi","target","b","perencanaan",["Visi, Misi dan Renstra","Rencana Kerja Tahunan","Kebijakan dan SOP","Monitoring dan Evaluasi"]],
-["Program Kemanusiaan","heart-handshake","b","program",["Bantuan Bencana dan Tanggap Darurat","Kesehatan dan Layanan Medis","Pendidikan dan Beasiswa","Pemberdayaan Ekonomi","Santunan Yatim, Dhuafa, Lansia","Lingkungan dan Infrastruktur Sosial"]],
-["Penerima Manfaat","users","t","penerima-manfaat",["Data dan Verifikasi Penerima","Asesmen Kebutuhan","Formulir dan Surat Persetujuan","Riwayat Bantuan"]],
-["Keuangan dan Akuntansi","wallet","t","keuangan",["Anggaran RAB","Kas dan Bank","Bukti Transaksi dan Kwitansi","Laporan Keuangan Bulanan dan Tahunan","Audit Internal dan Eksternal","Pajak dan Pelaporan"]],
-["Penggalangan Dana dan Donor","coins","i","donor",["Database Donatur","Kampanye Donasi","Proposal Pendanaan dan Hibah","Kemitraan CSR","Laporan Pertanggungjawaban Donor"]],
-["Relawan dan SDM","user-check","i","relawan-sdm",["Data Pengurus dan Staf","Rekrutmen dan Kontrak Kerja","Database Relawan","Pelatihan dan Pengembangan","Penilaian Kinerja"]],
-["Humas, Media dan Komunikasi","megaphone","b","humas",["Branding, Logo dan Identitas","Media Sosial dan Konten","Siaran Pers dan Publikasi","Dokumentasi Foto dan Video","Newsletter dan Laporan Publik"]],
-["Surat Menyurat dan Arsip","mail","b","surat-arsip",["Surat Masuk","Surat Keluar","Template Surat dan Dokumen","Arsip Dokumen Lama"]],
-["Aset dan Logistik","package","i","aset-logistik",["Inventaris Aset","Gudang dan Stok Bantuan","Kendaraan dan Peralatan","Pengadaan Barang dan Jasa"]],
-["Kepatuhan dan Manajemen Risiko","shield-check","t","kepatuhan",["Kebijakan Anti Penipuan dan Etika","Perlindungan Data Pribadi","Pengaduan dan Whistleblowing","Manajemen Risiko"]],
-["Laporan dan Akuntabilitas","file-text","i","laporan",["Laporan Tahunan","Laporan ke Pemerintah dan Regulator","Laporan Dampak Sosial"]]
+["Legalitas dan Organisasi","scale","t","https://drive.google.com/drive/folders/1YI9uFr2xXVuqYzLxkbzyV2_V6ALrLxJf?usp=drive_link",["Akta dan SK Kemenkumham","NPWP, NIB dan Perizinan","AD/ART dan Peraturan Internal","Struktur Pembina, Pengurus, Pengawas","Notulen Rapat Pembina dan Pengurus","MoU dan Perjanjian Kerja Sama"]],
+["Perencanaan dan Strategi","target","b","https://drive.google.com/drive/folders/1FbMtmn4U-cLLumIAFzbl2dH1CMxyINwY?usp=drive_link",["Visi, Misi dan Renstra","Rencana Kerja Tahunan","Kebijakan dan SOP","Monitoring dan Evaluasi"]],
+["Program Kemanusiaan","heart-handshake","b","https://drive.google.com/drive/folders/1QRGuR6MKzLJNbBN-K4WUzHe3pr5Fqz4j?usp=drive_link",["Bantuan Bencana dan Tanggap Darurat","Kesehatan dan Layanan Medis","Pendidikan dan Beasiswa","Pemberdayaan Ekonomi","Santunan Yatim, Dhuafa, Lansia","Lingkungan dan Infrastruktur Sosial"]],
+["Penerima Manfaat","users","t","https://drive.google.com/drive/folders/1eNjTAkec1khpCWTo0YAA-3D4SFYBQj5I?usp=drive_link",["Data dan Verifikasi Penerima","Asesmen Kebutuhan","Formulir dan Surat Persetujuan","Riwayat Bantuan"]],
+["Keuangan dan Akuntansi","wallet","t","https://drive.google.com/drive/folders/1yzSfKl-QzIz5X8GxAnH81ofntqiqlxpf?usp=drive_link",["Anggaran RAB","Kas dan Bank","Bukti Transaksi dan Kwitansi","Laporan Keuangan Bulanan dan Tahunan","Audit Internal dan Eksternal","Pajak dan Pelaporan"]],
+["Penggalangan Dana dan Donor","coins","i","https://drive.google.com/drive/folders/1Jaln5R46_HtVdOw14C_QibV-6Y0eXsNY?usp=drive_link",["Database Donatur","Kampanye Donasi","Proposal Pendanaan dan Hibah","Kemitraan CSR","Laporan Pertanggungjawaban Donor"]],
+["Relawan dan SDM","user-check","i","https://drive.google.com/drive/folders/1lCxZ4DaXRcwsQZb0VlO7nYPsPIUEdyN3?usp=drive_link",["Data Pengurus dan Staf","Rekrutmen dan Kontrak Kerja","Database Relawan","Pelatihan dan Pengembangan","Penilaian Kinerja"]],
+["Humas, Media dan Komunikasi","megaphone","b","https://drive.google.com/drive/folders/1xex1ElGeIxnTq7qNsP2NLNyFi4Y24Ww5?usp=drive_link",["Branding, Logo dan Identitas","Media Sosial dan Konten","Siaran Pers dan Publikasi","Dokumentasi Foto dan Video","Newsletter dan Laporan Publik"]],
+["Surat Menyurat dan Arsip","mail","b","https://drive.google.com/drive/folders/1P9CB2-lNOFMrDuAe-R2ojNqm21KsZua9?usp=drive_link",["Surat Masuk","Surat Keluar","Template Surat dan Dokumen","Arsip Dokumen Lama"]],
+["Aset dan Logistik","package","i","https://drive.google.com/drive/folders/1hxOUfx6FDHAurJBO8lEOHdbkSqo_8W4d?usp=drive_link",["Inventaris Aset","Gudang dan Stok Bantuan","Kendaraan dan Peralatan","Pengadaan Barang dan Jasa"]],
+["Kepatuhan dan Manajemen Risiko","shield-check","t","https://drive.google.com/drive/folders/1l78XDiYd_tn8UGxSed1Pzg9UVB3ivu4x?usp=drive_link",["Kebijakan Anti Penipuan dan Etika","Perlindungan Data Pribadi","Pengaduan dan Whistleblowing","Manajemen Risiko"]],
+["Laporan dan Akuntabilitas","file-text","i","https://drive.google.com/drive/folders/1fem67hUQgT7PVC5BG4kvldK2oyglQH8x?usp=drive_link",["Laporan Tahunan","Laporan ke Pemerintah dan Regulator","Laporan Dampak Sosial"]]
 ];
 var L={t:"Terbatas",i:"Internal",b:"Terbuka"},filter="all";
 var $=function(s){return document.querySelector(s)},icons=function(){if(window.lucide)lucide.createIcons()};
-function url(f){return BASE+"/"+f[3]}
+function url(f){return f[3]} // f[3] = tautan Google Drive langsung
 function pad(n){return String(n+1).padStart(2,"0")}
 function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 
