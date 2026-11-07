@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
+<title>YSKN Folder Directory</title>
+<style>
+:root{
+  --bg:#f3f8f6;--bg2:#e4f1ed;--surface:#fff;--text:#10231f;--muted:#4a625c;--border:#d6e5e0;
+  --primary:#0f766e;--primary-ink:#fff;--primary-soft:#d9f0ec;--accent:#d97706;--accent-soft:#fef3c7;
+  --ok-bg:#dcfce7;--ok:#14532d;--warn-bg:#fef3c7;--warn:#78350f;--bad-bg:#fee2e2;--bad:#7f1d1d;
+  --shadow:0 1px 2px rgba(16,35,31,.06),0 8px 24px rgba(16,35,31,.08);
+  --glass:rgba(255,255,255,.72);--ease:cubic-bezier(.22,1,.36,1);
+  --fs:clamp(.9rem,.85rem + .25vw,1.05rem);--pad:clamp(1rem,.5rem + 2.5vw,2.5rem);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a1512;--bg2:#0f211c;--surface:#12231f;--text:#e6f2ee;--muted:#9db5ae;--border:#223b34;
+    --primary:#2dd4bf;--primary-ink:#042f2a;--primary-soft:#12382f;--accent:#fbbf24;--accent-soft:#3a2a07;
+    --ok-bg:#12351f;--ok:#bbf7d0;--warn-bg:#3a2a07;--warn:#fde68a;--bad-bg:#3d1515;--bad:#fecaca;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);--glass:rgba(18,35,31,.75);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a1512;--bg2:#0f211c;--surface:#12231f;--text:#e6f2ee;--muted:#9db5ae;--border:#223b34;
+  --primary:#2dd4bf;--primary-ink:#042f2a;--primary-soft:#12382f;--accent:#fbbf24;--accent-soft:#3a2a07;
+  --ok-bg:#12351f;--ok:#bbf7d0;--warn-bg:#3a2a07;--warn:#fde68a;--bad-bg:#3d1515;--bad:#fecaca;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);--glass:rgba(18,35,31,.75);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:var(--fs)/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);
+  background:radial-gradient(60rem 30rem at 85% -10%,var(--bg2),transparent),var(--bg);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--glass);backdrop-filter:blur(14px)}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+svg.lucide{width:1.25em;height:1.25em;flex:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-width:44px;min-height:44px;padding:0 1rem;border-radius:14px;
+  border:1px solid var(--border);background:var(--surface);transition:transform .25s var(--ease),background .25s,box-shadow .25s;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.95)}
+.btn.primary{background:var(--primary);color:var(--primary-ink);border-color:transparent;font-weight:600}
+.logo{width:2.5rem;height:2.5rem;border-radius:12px;flex:none}
+
+.app{display:grid;grid-template-columns:minmax(0,1fr);min-height:100dvh}
+.side{display:none}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:.75rem;padding:.6rem var(--pad);
+  background:var(--glass);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:.7rem;min-width:0;font-weight:700;line-height:1.15}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:.75em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spacer{flex:1}
+main{padding:var(--pad);padding-bottom:calc(5.5rem + var(--pad));max-width:90rem;width:100%;margin-inline:auto}
+section{margin-bottom:clamp(2rem,1rem + 4vw,4rem)}
+h1{font-size:clamp(1.5rem,1.1rem + 2vw,2.6rem);line-height:1.15;margin:0 0 .5rem;letter-spacing:-.02em}
+h2{font-size:clamp(1.15rem,1rem + 1vw,1.6rem);margin:0 0 .75rem}
+p{margin:0 0 .75rem;color:var(--muted)}
+.hero{padding:clamp(1.25rem,1rem + 3vw,2.75rem);border-radius:clamp(18px,3vw,28px);color:#fff;
+  background:linear-gradient(135deg,#0f766e,#115e59 60%,#134e4a);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-4rem;top:-4rem;width:16rem;height:16rem;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.45),transparent 70%)}
+.hero p{color:#d5f2ee;max-width:42rem;position:relative}.hero h1{position:relative}
+.tools{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.25rem 0}
+.search{flex:1 1 16rem;display:flex;align-items:center;gap:.6rem;min-height:48px;padding:0 1rem;border-radius:14px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
+.search input{flex:1;min-width:0;border:0;background:transparent;color:inherit;font:inherit;outline:0;min-height:44px}
+.search:focus-within{border-color:var(--primary)}
+.chips{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chip{min-height:44px;padding:0 1rem;border-radius:999px;border:1px solid var(--border);background:var(--surface);white-space:nowrap;transition:all .25s var(--ease)}
+.chip[aria-selected="true"]{background:var(--primary);color:var(--primary-ink);border-color:transparent;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:clamp(.75rem,.5rem + 1vw,1.25rem)}
+.cw{container-type:inline-size}
+.card{display:flex;flex-direction:column;gap:.75rem;height:100%;padding:1.1rem;border-radius:20px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);transition:transform .35s var(--ease),box-shadow .35s}
+.card .row{display:flex;align-items:flex-start;gap:.8rem}
+.ico{display:grid;place-items:center;width:3rem;height:3rem;border-radius:14px;background:var(--primary-soft);color:var(--primary);flex:none}
+.num{font-size:.75rem;font-weight:700;color:var(--accent);letter-spacing:.08em}
+.card h3{margin:0;font-size:1.02rem;line-height:1.25;overflow-wrap:anywhere}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;color:var(--muted);font-size:.85rem}
+.badge{padding:.15rem .6rem;border-radius:999px;font-size:.75rem;font-weight:700}
+.b-t{background:var(--bad-bg);color:var(--bad)}.b-i{background:var(--warn-bg);color:var(--warn)}.b-b{background:var(--ok-bg);color:var(--ok)}
+.acts{display:flex;gap:.5rem;margin-top:auto}.acts .btn{flex:1;font-size:.9rem}
+@container (max-width:15rem){.meta .cnt{display:none}}
+@media (hover:hover){.card:hover{transform:translateY(-4px)}.btn:hover{box-shadow:var(--shadow)}.chip:hover{border-color:var(--primary)}}
+.empty{display:none;text-align:center;padding:2rem;border:1px dashed var(--border);border-radius:20px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:1rem}
+.panel{padding:1.25rem;border-radius:20px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
+code{padding:.1rem .4rem;border-radius:6px;background:var(--primary-soft);color:var(--primary);overflow-wrap:anywhere}
+ul.plain{margin:0;padding-left:1.1rem;color:var(--muted)}ul.plain li{margin:.35rem 0}
+footer{padding:1.5rem var(--pad) 6rem;color:var(--muted);font-size:.85rem;text-align:center}
+
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-around;padding:.4rem .5rem calc(.4rem + env(safe-area-inset-bottom,0px));
+  background:var(--glass);backdrop-filter:blur(16px);border-top:1px solid var(--border)}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:48px;border:0;background:none;color:var(--muted);font-size:.7rem;border-radius:12px;transition:color .25s,transform .25s var(--ease)}
+.tab:active{transform:scale(.92)}.tab[aria-current="true"]{color:var(--primary);font-weight:700}
+.scrim{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .3s}
+.drawer{position:fixed;top:0;bottom:0;left:0;z-index:50;width:min(85vw,20rem);padding:calc(1rem + env(safe-area-inset-top,0px)) 1rem 1rem;background:var(--surface);
+  transform:translateX(-105%);transition:transform .4s var(--ease);display:flex;flex-direction:column;gap:.5rem;overflow-y:auto}
+body.drawer-open .drawer{transform:none}body.drawer-open .scrim{opacity:1;pointer-events:auto}
+.nav{display:flex;align-items:center;gap:.75rem;min-height:48px;padding:0 .9rem;border-radius:14px;border:0;background:none;width:100%;text-align:left;color:var(--muted);transition:background .25s,color .25s}
+.nav[aria-current="true"]{background:var(--primary-soft);color:var(--primary);font-weight:700}
+@media (hover:hover){.nav:hover{background:var(--primary-soft)}}
+
+dialog{width:min(92vw,34rem);max-height:86dvh;padding:0;border:1px solid var(--border);border-radius:24px;background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(0,0,0,.55);backdrop-filter:blur(3px)}
+dialog[open]{animation:pop .35s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}}
+.mh{display:flex;align-items:center;gap:.8rem;padding:1rem 1.1rem;border-bottom:1px solid var(--border)}
+.mb{padding:1rem 1.1rem 1.25rem;overflow-y:auto;max-height:calc(86dvh - 9rem)}
+.sub{display:flex;align-items:center;gap:.6rem;padding:.7rem .8rem;margin-bottom:.4rem;border-radius:12px;background:var(--bg);border:1px solid var(--border);overflow-wrap:anywhere}
+.sub svg{color:var(--accent)}
+
+@media (min-width:768px){
+  .app{grid-template-columns:auto minmax(0,1fr)}
+  .side{display:flex;flex-direction:column;gap:.4rem;position:sticky;top:0;height:100dvh;width:16rem;padding:1rem .8rem;background:var(--surface);border-right:1px solid var(--border);transition:width .4s var(--ease);overflow:hidden}
+  .side .brand{padding:.25rem .3rem 1rem}
+  .side.mini{width:4.9rem}.side.mini .lbl,.side.mini .brand span{display:none}
+  .tabbar,.scrim,.drawer,.only-m{display:none}
+  main{padding-bottom:var(--pad)}footer{padding-bottom:2rem}
+}
+@media (min-width:1600px){html{font-size:112.5%}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<!-- Contoh logo format <img src>: gunakan data URI (di bawah) atau URL penuh, mis. https://example.com/assets/logo-yskn.png -->
+<div class="app">
+  <aside class="side" id="side" aria-label="Navigasi utama">
+    <div class="brand">
+      <img class="logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%230f766e'/%3E%3Cpath d='M24 36s-11-6.6-11-14.5C13 17 16 14.5 19 14.5c2.2 0 4 1.2 5 3 1-1.8 2.8-3 5-3 3 0 6 2.5 6 7C35 29.4 24 36 24 36z' fill='%23fff'/%3E%3C/svg%3E" alt="Logo YSKN">
+      <span>YSKN<small>Folder Directory</small></span>
+    </div>
+    <div data-nav></div>
+    <div class="spacer"></div>
+    <button class="nav" id="collapse" type="button" aria-label="Ciutkan atau perluas sidebar"><i data-lucide="chevrons-left"></i><span class="lbl">Ciutkan menu</span></button>
+  </aside>
+
+  <div>
+    <header class="top">
+      <button class="btn only-m" id="openDrawer" type="button" aria-label="Buka menu"><i data-lucide="menu"></i></button>
+      <div class="brand">
+        <img class="logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%230f766e'/%3E%3Cpath d='M24 36s-11-6.6-11-14.5C13 17 16 14.5 19 14.5c2.2 0 4 1.2 5 3 1-1.8 2.8-3 5-3 3 0 6 2.5 6 7C35 29.4 24 36 24 36z' fill='%23fff'/%3E%3C/svg%3E" alt="Logo YSKN">
+        <div>YSKN Folder Directory<small>Yayasan Sosial Kemanusiaan</small></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn" id="theme" type="button" aria-label="Ganti tema terang atau gelap"><i data-lucide="moon"></i></button>
+    </header>
+
+    <main>
+      <section id="beranda">
+        <div class="hero">
+          <h1>Direktori Arsip Digital Yayasan</h1>
+          <p>Akses cepat ke 12 folder utama YSKN: legalitas, program kemanusiaan, keuangan, hingga laporan akuntabilitas. Pilih folder untuk membuka tautan tujuan.</p>
+        </div>
+        <div class="tools">
+          <label class="search"><i data-lucide="search"></i><input id="q" type="search" placeholder="Cari folder atau subfolder…" aria-label="Cari folder"></label>
+        </div>
+        <div class="chips" role="tablist" aria-label="Filter hak akses" id="chips"></div>
+        <p id="count" style="margin:.9rem 0 .5rem" aria-live="polite"></p>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty"><h2>Folder tidak ditemukan</h2><p>Coba kata kunci lain atau ubah filter akses.</p></div>
+      </section>
+
+      <section id="panduan">
+        <h2>Panduan Penamaan File</h2>
+        <div class="two">
+          <div class="panel"><p>Format baku:</p><code>TAHUN-BULAN-TANGGAL_Kategori_Deskripsi_vX</code>
+            <p style="margin-top:.75rem">Contoh: <code>2026-11-07_Laporan_Bantuan-Banjir-Jakarta_v1.pdf</code></p></div>
+          <div class="panel"><ul class="plain"><li>Gunakan garis bawah (_) tanpa spasi.</li><li>Awali folder dengan nomor urut.</li><li>Pisahkan arsip per tahun, misalnya <code>/2026/</code>.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="akses">
+        <h2>Catatan Hak Akses</h2>
+        <div class="two">
+          <div class="panel"><span class="badge b-t">Terbatas</span><p style="margin-top:.6rem">Hanya Pengurus, Bendahara, atau tim Program. Memuat data sensitif.</p></div>
+          <div class="panel"><span class="badge b-i">Internal</span> <span class="badge b-b">Terbuka</span><p style="margin-top:.6rem">Internal untuk staf dan relawan terdaftar; Terbuka untuk seluruh tim yayasan.</p></div>
+        </div>
+      </section>
+    </main>
+    <footer>© 2026 Yayasan Sosial Kemanusiaan. Seluruh hak dilindungi.</footer>
+  </div>
+</div>
+
+<nav class="tabbar" id="tabbar" aria-label="Navigasi bawah"></nav>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Menu samping">
+  <div class="brand" style="margin-bottom:.75rem"><span>Menu YSKN<small>Navigasi cepat</small></span><span class="spacer"></span>
+    <button class="btn" id="closeDrawer" type="button" aria-label="Tutup menu"><i data-lucide="x"></i></button></div>
+  <div data-nav></div>
+</aside>
+
+<dialog id="modal" aria-labelledby="mt">
+  <div class="mh"><div class="ico" id="mi"></div><div style="flex:1;min-width:0"><div class="num" id="mn"></div><strong id="mt"></strong></div>
+    <button class="btn" id="mx" type="button" aria-label="Tutup"><i data-lucide="x"></i></button></div>
+  <div class="mb"><div id="ms"></div>
+    <a class="btn primary" id="ml" href="https://example.com" target="_blank" rel="noopener noreferrer" style="width:100%;margin-top:.75rem"><i data-lucide="external-link"></i>Buka Folder</a></div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<script>
+(function(){
+"use strict";
+var BASE="https://example.com"; // Ganti dengan alamat tujuan masing-masing folder
+var F=[
+["Legalitas dan Organisasi","scale","t","legalitas",["Akta dan SK Kemenkumham","NPWP, NIB dan Perizinan","AD/ART dan Peraturan Internal","Struktur Pembina, Pengurus, Pengawas","Notulen Rapat Pembina dan Pengurus","MoU dan Perjanjian Kerja Sama"]],
+["Perencanaan dan Strategi","target","b","perencanaan",["Visi, Misi dan Renstra","Rencana Kerja Tahunan","Kebijakan dan SOP","Monitoring dan Evaluasi"]],
+["Program Kemanusiaan","heart-handshake","b","program",["Bantuan Bencana dan Tanggap Darurat","Kesehatan dan Layanan Medis","Pendidikan dan Beasiswa","Pemberdayaan Ekonomi","Santunan Yatim, Dhuafa, Lansia","Lingkungan dan Infrastruktur Sosial"]],
+["Penerima Manfaat","users","t","penerima-manfaat",["Data dan Verifikasi Penerima","Asesmen Kebutuhan","Formulir dan Surat Persetujuan","Riwayat Bantuan"]],
+["Keuangan dan Akuntansi","wallet","t","keuangan",["Anggaran RAB","Kas dan Bank","Bukti Transaksi dan Kwitansi","Laporan Keuangan Bulanan dan Tahunan","Audit Internal dan Eksternal","Pajak dan Pelaporan"]],
+["Penggalangan Dana dan Donor","coins","i","donor",["Database Donatur","Kampanye Donasi","Proposal Pendanaan dan Hibah","Kemitraan CSR","Laporan Pertanggungjawaban Donor"]],
+["Relawan dan SDM","user-check","i","relawan-sdm",["Data Pengurus dan Staf","Rekrutmen dan Kontrak Kerja","Database Relawan","Pelatihan dan Pengembangan","Penilaian Kinerja"]],
+["Humas, Media dan Komunikasi","megaphone","b","humas",["Branding, Logo dan Identitas","Media Sosial dan Konten","Siaran Pers dan Publikasi","Dokumentasi Foto dan Video","Newsletter dan Laporan Publik"]],
+["Surat Menyurat dan Arsip","mail","b","surat-arsip",["Surat Masuk","Surat Keluar","Template Surat dan Dokumen","Arsip Dokumen Lama"]],
+["Aset dan Logistik","package","i","aset-logistik",["Inventaris Aset","Gudang dan Stok Bantuan","Kendaraan dan Peralatan","Pengadaan Barang dan Jasa"]],
+["Kepatuhan dan Manajemen Risiko","shield-check","t","kepatuhan",["Kebijakan Anti Penipuan dan Etika","Perlindungan Data Pribadi","Pengaduan dan Whistleblowing","Manajemen Risiko"]],
+["Laporan dan Akuntabilitas","file-text","i","laporan",["Laporan Tahunan","Laporan ke Pemerintah dan Regulator","Laporan Dampak Sosial"]]
+];
+var L={t:"Terbatas",i:"Internal",b:"Terbuka"},filter="all";
+var $=function(s){return document.querySelector(s)},icons=function(){if(window.lucide)lucide.createIcons()};
+function url(f){return BASE+"/"+f[3]}
+function pad(n){return String(n+1).padStart(2,"0")}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+function render(){
+  var q=$("#q").value.trim().toLowerCase(),out="",n=0;
+  F.forEach(function(f,i){
+    if(filter!=="all"&&f[2]!==filter)return;
+    if(q&&(f[0]+" "+f[4].join(" ")).toLowerCase().indexOf(q)<0)return;
+    n++;
+    out+='<div class="cw"><article class="card"><div class="row"><div class="ico"><i data-lucide="'+f[1]+'"></i></div><div><div class="num">'+pad(i)+'</div><h3>'+esc(f[0])+'</h3></div></div>'+
+    '<div class="meta"><span class="badge b-'+f[2]+'">'+L[f[2]]+'</span><span class="cnt">'+f[4].length+' subfolder</span></div>'+
+    '<div class="acts"><button class="btn" type="button" data-i="'+i+'">Subfolder</button>'+
+    '<a class="btn primary" href="'+url(f)+'" target="_blank" rel="noopener noreferrer" aria-label="Buka folder '+esc(f[0])+'">Buka <i data-lucide="arrow-up-right"></i></a></div></article></div>';
+  });
+  $("#grid").innerHTML=out;$("#empty").style.display=n?"none":"block";
+  $("#count").textContent="Menampilkan "+n+" dari "+F.length+" folder utama";icons();
+}
+function chips(){
+  var o=[["all","Semua"],["b","Terbuka"],["i","Internal"],["t","Terbatas"]];
+  $("#chips").innerHTML=o.map(function(c){return'<button class="chip" role="tab" type="button" data-f="'+c[0]+'" aria-selected="'+(c[0]===filter)+'">'+c[1]+'</button>'}).join("");
+}
+var NAV=[["beranda","home","Beranda"],["panduan","book-open","Panduan"],["akses","key-round","Hak Akses"]];
+function nav(){
+  var h=NAV.map(function(n,k){return'<button class="nav" type="button" data-go="'+n[0]+'" aria-current="'+(k===0)+'"><i data-lucide="'+n[1]+'"></i><span class="lbl">'+n[2]+'</span></button>'}).join("");
+  document.querySelectorAll("[data-nav]").forEach(function(e){e.innerHTML=h});
+  $("#tabbar").innerHTML=NAV.map(function(n,k){return'<button class="tab" type="button" data-go="'+n[0]+'" aria-current="'+(k===0)+'"><i data-lucide="'+n[1]+'"></i>'+n[2]+'</button>'}).join("")+
+    '<button class="tab" type="button" id="tabMenu"><i data-lucide="menu"></i>Menu</button>';
+}
+function setActive(id){document.querySelectorAll("[data-go]").forEach(function(b){b.setAttribute("aria-current",b.dataset.go===id)})}
+function drawer(open){document.body.classList.toggle("drawer-open",open)}
+
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button,a,.scrim");if(!t)return;
+  if(t.dataset.go){var s=document.getElementById(t.dataset.go);if(s)s.scrollIntoView({behavior:"smooth",block:"start"});setActive(t.dataset.go);drawer(false)}
+  else if(t.dataset.f){filter=t.dataset.f;chips();render()}
+  else if(t.dataset.i!==undefined){var f=F[+t.dataset.i];
+    $("#mi").innerHTML='<i data-lucide="'+f[1]+'"></i>';$("#mn").textContent="FOLDER "+pad(+t.dataset.i);$("#mt").textContent=f[0];
+    $("#ms").innerHTML=f[4].map(function(s,k){return'<div class="sub"><i data-lucide="folder"></i><span>'+String(k+1).padStart(2,"0")+" · "+esc(s)+"</span></div>"}).join("");
+    $("#ml").href=url(f);$("#modal").showModal();icons()}
+  else if(t.id==="mx"){$("#modal").close()}
+  else if(t.id==="openDrawer"||t.id==="tabMenu"){drawer(true)}
+  else if(t.id==="closeDrawer"||t.id==="scrim"||t.classList.contains("scrim")){drawer(false)}
+  else if(t.id==="collapse"){var s=$("#side").classList.toggle("mini");t.setAttribute("aria-expanded",!s)}
+  else if(t.id==="theme"){setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark",true)}
+});
+$("#modal").addEventListener("click",function(e){if(e.target===this)this.close()});
+$("#q").addEventListener("input",render);
+window.addEventListener("resize",function(){if(innerWidth>=768)drawer(false)});
+window.addEventListener("orientationchange",function(){drawer(false)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")drawer(false)});
+
+function setTheme(m,save){
+  document.documentElement.dataset.theme=m;
+  var b=$("#theme");b.innerHTML='<i data-lucide="'+(m==="dark"?"sun":"moon")+'"></i>';icons();
+  var c=m==="dark"?"#0a1512":"#0f766e";document.querySelector('meta[name="theme-color"]').content=c;
+  if(save){try{localStorage.setItem("yskn-theme",m)}catch(_){}}
+}
+var saved=null;try{saved=localStorage.getItem("yskn-theme")}catch(_){}
+setTheme(saved||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),false);
+
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)setActive(x.target.id)})},{rootMargin:"-30% 0px -60% 0px"});
+  NAV.forEach(function(n){io.observe(document.getElementById(n[0]))});
+}
+nav();chips();render();icons();
+})();
+</script>
+</body>
+</html>
